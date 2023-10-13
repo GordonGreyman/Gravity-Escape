@@ -284,20 +284,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.transform.name.Contains("Checkpoint"))
-            {
-                if (checkpoint != null && checkpoint.GetComponent<Checkpoint>().checkpointLevel > other.transform.GetComponent<Checkpoint>().checkpointLevel)
-                {
-                    return;
-                }
-                else
-                {
-                    checkpoint = other.transform.gameObject;
-                }
-            }
-        }
+
 
 
     }

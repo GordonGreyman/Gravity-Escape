@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{86043CA0-7962-D037-79DA-91A18EAF23E7}</ProjectGuid>
+    <ProjectGuid>{DB9B0875-6909-DDEB-21BD-9723D4781CB3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -68,6 +68,7 @@
     <Compile Include="Assets\Unity UI Samples\Scripts\DragMe.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Scripts\CutsceneEnter.cs" />
+    <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\DropMe.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
     <Compile Include="Assets\Scripts\StartScene\Settings.cs" />
@@ -83,13 +84,11 @@
     <Compile Include="Assets\Scripts\GameLights.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\EvolveGames\RealisticFPSController\Scripts\MENU.cs" />
-    <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
     <Compile Include="Assets\EvolveGames\RealisticFPSController\Scripts\HandsSmooth.cs" />
     <Compile Include="Assets\EvolveGames\RealisticFPSController\Scripts\TextWriter.cs" />
     <Compile Include="Assets\Scripts\Shoot.cs" />
     <Compile Include="Assets\Scripts\InGameMenu.cs" />
-    <Compile Include="Assets\Scripts\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\StartScene\Buttons.cs" />
     <Compile Include="Assets\Scripts\Weights.cs" />
     <Compile Include="Assets\EvolveGames\RealisticFPSController\Scripts\Viewpoint.cs" />
@@ -105,7 +104,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Real Stars Skybox\Demo Scene\Documentation.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -872,7 +870,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{6C89DFF7-4BA5-A88D-EA00-15EFCA869F0C}</Project>
+      <Project>{BC0D03F5-D4FF-F7C6-1715-35A3B2F76C9D}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
