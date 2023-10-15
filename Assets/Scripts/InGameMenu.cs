@@ -177,6 +177,17 @@ public class InGameMenu : MonoBehaviour
 
     }
 
+    public void RestartGame()
+    {
+        Settings.isFullScreenBool = fullScreenToggle.isOn;
+        Settings.currentQuality = qualityDropdown.value;
+        Settings.currentRes = resDropdown.value;
+        Settings.currentVolumePercentage = volumeSlider.value;
+        audioMixer.SetFloat("volume", Settings.currentVolume);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("PlayScene");
+    }
+
     public void ExitToMainMenu()
     {
         Settings.isFullScreenBool = fullScreenToggle.isOn;
