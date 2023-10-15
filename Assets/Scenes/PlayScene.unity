@@ -3240,6 +3240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carriedObject: {fileID: 0}
   carryLocationObject: {fileID: 453591762}
+  instructions: {fileID: 680183603}
   rayDistance: 10
   targetLayer:
     serializedVersion: 2
@@ -6585,6 +6586,7 @@ MonoBehaviour:
   - Release RMB while carrying to drop
   - Click LMB while carrying to throw
   currentText: {fileID: 0}
+  currentTextIndex: 0
 --- !u!114 &680183604
 MonoBehaviour:
   m_ObjectHideFlags: 0

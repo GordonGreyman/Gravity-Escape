@@ -7,7 +7,7 @@ public class Instructions : MonoBehaviour
 {
     public List<string> texts = new List<string>();
     public Text currentText;
-    public static int currentTextIndex = 0;
+    public int currentTextIndex = 0;
 
     private const float initialDelay = 0.5f;
     private const float reenableDelay = 1.5f;

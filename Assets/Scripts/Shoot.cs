@@ -8,7 +8,7 @@ public class Shoot : MonoBehaviour
     public GameObject carryLocationObject;
     private RaycastHit hit;
     private Rigidbody rb;
-
+    public Instructions instructions;
 
     public float rayDistance = 15f;
     public LayerMask targetLayer;
@@ -51,7 +51,7 @@ public class Shoot : MonoBehaviour
 
 
                 carriedObject = null;
-                if (Instructions.currentTextIndex == 2)
+                if (instructions.currentTextIndex == 2)
                     OnCall?.Invoke();
         }
 
@@ -66,7 +66,7 @@ public class Shoot : MonoBehaviour
 
                 carriedObject = null;
 
-                if (Instructions.currentTextIndex == 1)
+                if (instructions.currentTextIndex == 1)
                     OnCall?.Invoke();
         }
 
@@ -110,7 +110,7 @@ public class Shoot : MonoBehaviour
                     carriedObject = hit.transform.gameObject;
                     audioSource.clip = audioClips.Length > 0 ? audioClips[0] : null;
                     audioSource.Play();
-                    if(Instructions.currentTextIndex == 0)
+                    if(instructions.currentTextIndex == 0)
                         OnCall?.Invoke();
                 }
             }
