@@ -115,7 +115,4 @@ public class TextHandler : MonoBehaviour
         yield return new WaitForSeconds(14);
         instructions.SetActive(true);
     }
-
-
-
 }
