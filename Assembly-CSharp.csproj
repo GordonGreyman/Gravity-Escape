@@ -69,12 +69,14 @@
     <Compile Include="Assets\Unity UI Samples\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\Scripts\CutsceneEnter.cs" />
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\Scripts\TextHandler.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\DropMe.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
     <Compile Include="Assets\Scripts\StartScene\Settings.cs" />
     <Compile Include="Assets\EvolveGames\RealisticFPSController\Scripts\ItemChange.cs" />
     <Compile Include="Assets\Scripts\StartScene\BrightnessControl.cs" />
     <Compile Include="Assets\Scripts\Doors.cs" />
+    <Compile Include="Assets\Scripts\TextTrigger.cs" />
     <Compile Include="Assets\Scripts\PlateTriggers.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Scripts\Generator.cs" />

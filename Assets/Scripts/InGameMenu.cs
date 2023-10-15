@@ -15,6 +15,8 @@ public class InGameMenu : MonoBehaviour
     public Dropdown qualityDropdown;
     public Toggle fullScreenToggle;
     public AudioSource[] audioSources;
+    public GameObject[] textObjs;
+    private List<GameObject> openTextObjs = new List<GameObject>();
 
     private enum FadeState { Inactive, FadingIn, FadingOut }
     private FadeState fadeState = FadeState.Inactive;
@@ -29,7 +31,6 @@ public class InGameMenu : MonoBehaviour
 
     private void Start()
     {
-
         if (Settings.currentVolume != 0 && Settings.currentVolumePercentage != 0)
         {
             volumeSlider.value = Settings.currentVolumePercentage;
@@ -50,6 +51,15 @@ public class InGameMenu : MonoBehaviour
                {
                     audio.Pause();
                }
+
+               foreach(GameObject textObj in textObjs)
+               {
+                    if (textObj.activeInHierarchy)
+                    {
+                        textObj.SetActive(false);
+                        openTextObjs.Add(textObj);
+                    }
+               }
                 StartCoroutine(FadeIn());
             }
 
@@ -69,6 +79,13 @@ public class InGameMenu : MonoBehaviour
                     if(audio.gameObject.layer != LayerMask.NameToLayer("Ignore Raycast"))
                         audio.Play();
                 }
+
+                foreach (GameObject textObj in openTextObjs)
+                {
+                    textObj.SetActive(true);
+                    
+                }
+                openTextObjs.Clear();
 
                 StartCoroutine(FadeOut());
             }
@@ -109,6 +126,13 @@ public class InGameMenu : MonoBehaviour
             if (audio.gameObject.layer != LayerMask.NameToLayer("Ignore Raycast"))
                 audio.Play();
         }
+
+        foreach (GameObject textObj in openTextObjs)
+        {
+            textObj.SetActive(true);
+        }
+        openTextObjs.Clear();
+
         StartCoroutine(FadeOut());
     }
 

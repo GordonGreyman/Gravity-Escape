@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerTrigger : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class PlayerTrigger : MonoBehaviour
     private Doors doorScript;
     private bool interactKeyPressed = false;
     public AudioSource targetAudioSource;
-
+    public Text useText;
 
     void Start()
     {
@@ -38,7 +39,14 @@ public class PlayerTrigger : MonoBehaviour
         {
             CutsceneEnter.cutsceneStarted = true;
         }
-        canInteract = true;
+
+        if (collision.gameObject.CompareTag("GameController") && isUse)
+        {
+            useText.gameObject.SetActive(true);
+        }
+
+
+            canInteract = true;
     }
 
     private void OnTriggerExit(Collider collision)
@@ -47,6 +55,11 @@ public class PlayerTrigger : MonoBehaviour
         {
             doorScript.playCloseAnim = true;
             doorScript.playOpenAnim = false;
+        }
+
+        if (collision.gameObject.CompareTag("GameController") && isUse)
+        {
+            useText.gameObject.SetActive(false);
         }
         canInteract = false;
     }
@@ -65,7 +78,6 @@ public class PlayerTrigger : MonoBehaviour
                 targetAudioSource.gameObject.layer = LayerMask.NameToLayer("Default");
                 targetAudioSource.Play();
 
-                Debug.Log("?");
             }
 
 
