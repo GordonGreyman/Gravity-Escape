@@ -112,7 +112,7 @@ public class TextHandler : MonoBehaviour
 
     private IEnumerator StartInstructions()
     {
-        yield return new WaitForSeconds(14);
+        yield return new WaitForSeconds(3);
         instructions.SetActive(true);
     }
 

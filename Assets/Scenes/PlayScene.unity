@@ -6620,7 +6620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Hold RMB to carry objects
 --- !u!222 &680183605
 CanvasRenderer:
   m_ObjectHideFlags: 0

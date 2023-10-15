@@ -15,20 +15,10 @@ public class Instructions : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(texts.Count);
         stopIndex = texts.Count;
         currentText = GetComponent<Text>();
         Shoot.OnCall += DisplayText;
-    }
-
-    private void FixedUpdate()
-    {
-        if (currentTextIndex < texts.Count)
-        {
-            if (currentText.text != texts[currentTextIndex])
-            {
-                currentText.text = texts[currentTextIndex];
-            }
-        }
     }
 
     public void DisplayText()
@@ -47,13 +37,17 @@ public class Instructions : MonoBehaviour
         yield return new WaitForSeconds(reenableDelay);
         currentText.enabled = true;
 
-        if (currentTextIndex < texts.Count)
+        if (currentTextIndex <= stopIndex) {
             currentTextIndex++;
-
-        if (currentTextIndex == stopIndex)
-        {
-            Shoot.OnCall -= DisplayText;
-            currentText.gameObject.SetActive(false);
+            if (currentTextIndex != stopIndex)
+            {
+                currentText.text = texts[currentTextIndex];
+            }
+            else
+            {
+                Shoot.OnCall -= DisplayText;
+                currentText.gameObject.SetActive(false);
+            }
         }
     }
 }
