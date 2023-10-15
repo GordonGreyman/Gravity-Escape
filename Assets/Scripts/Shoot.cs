@@ -18,6 +18,10 @@ public class Shoot : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip[] audioClips = new AudioClip[3];
+
+    public delegate void InstructionHandler();
+    public static event InstructionHandler OnCall;
+
     private void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -47,8 +51,9 @@ public class Shoot : MonoBehaviour
 
 
                 carriedObject = null;
-
-            }
+                if (Instructions.currentTextIndex == 2)
+                    OnCall?.Invoke();
+        }
 
             if (carriedObject != null && Input.GetMouseButtonUp(1))
             {
@@ -60,7 +65,10 @@ public class Shoot : MonoBehaviour
                 audioSource.Play();
 
                 carriedObject = null;
-            }
+
+                if (Instructions.currentTextIndex == 1)
+                    OnCall?.Invoke();
+        }
 
             if (carriedObject != null && rayDistance +1f < Vector3.Distance(transform.position, carriedObject.transform.position))
             {
@@ -102,9 +110,13 @@ public class Shoot : MonoBehaviour
                     carriedObject = hit.transform.gameObject;
                     audioSource.clip = audioClips.Length > 0 ? audioClips[0] : null;
                     audioSource.Play();
+                    if(Instructions.currentTextIndex == 0)
+                        OnCall?.Invoke();
                 }
             }
         }
+
+
     }
 
     private bool IsObstructed(Vector3 start, Vector3 end)

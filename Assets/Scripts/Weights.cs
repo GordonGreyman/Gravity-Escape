@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Weights : MonoBehaviour
 {
 
     private Vector3 initialPos;
-    public bool onTrigger = false;
+    private Rigidbody rb;
 
 
     void Start()
     {
         initialPos = transform.position;
+        rb = transform.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
         CheckForFall();
     }
@@ -24,7 +24,7 @@ public class Weights : MonoBehaviour
     {
         if (transform.position.y < -15)
         {
-            transform.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            rb.velocity = new Vector3(0, 0, 0);
             transform.position = initialPos;
 
         }

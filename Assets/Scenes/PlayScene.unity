@@ -8,7 +8,7 @@ OcclusionCullingSettings:
     smallestOccluder: 2
     smallestHole: 0.4
     backfaceThreshold: 100
-  m_SceneGUID: 9fc0d4010bbf28b4594072e72b8655ab
+  m_SceneGUID: 0a1089fe370798043b1d05e6afa78534
   m_OcclusionCullingData: {fileID: 36300000, guid: 6c1ff37bff6cfe94a886ac48ee3aa450,
     type: 2}
 --- !u!104 &2
@@ -2971,7 +2971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f68ff84332eda48b82a23e9a693700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onTrigger: 0
 --- !u!54 &272166751
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4712,6 +4711,7 @@ RectTransform:
   - {fileID: 1685901339}
   - {fileID: 144250102}
   - {fileID: 1385689456}
+  - {fileID: 680183602}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4747,6 +4747,7 @@ MonoBehaviour:
   - {fileID: 1685901338}
   - {fileID: 144250101}
   - {fileID: 1385689455}
+  - {fileID: 680183601}
   escapeMenu: {fileID: 1848163466}
   settingsMenu: {fileID: 1848828452}
 --- !u!114 &416134378
@@ -4884,6 +4885,7 @@ MonoBehaviour:
   currentIndex: 0
   textType: 1
   textTriggered: 0
+  instructions: {fileID: 680183601}
 --- !u!114 &416134381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4906,6 +4908,7 @@ MonoBehaviour:
   currentIndex: 0
   textType: 0
   textTriggered: 0
+  instructions: {fileID: 0}
 --- !u!1001 &419650636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5785,7 +5788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f68ff84332eda48b82a23e9a693700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onTrigger: 0
 --- !u!135 &541239288
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5797,7 +5799,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.55
+  m_Radius: 0.65
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &552633607
 GameObject:
@@ -6527,6 +6529,104 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05a81c3d5091440058129444d28322f3, type: 3}
+--- !u!1 &680183601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 680183602}
+  - component: {fileID: 680183605}
+  - component: {fileID: 680183604}
+  - component: {fileID: 680183603}
+  m_Layer: 5
+  m_Name: Instruction Text
+  m_TagString: Use
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &680183602
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680183601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 416134376}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 150}
+  m_SizeDelta: {x: -400, y: 125}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &680183603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680183601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65de1ca57c0e5674cbc3e47ba92ff055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - Hold RMB to carry objects
+  - Release RMB while carrying to drop
+  - Click LMB while carrying to throw
+  currentText: {fileID: 0}
+--- !u!114 &680183604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680183601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 105
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &680183605
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680183601}
+  m_CullTransparentMesh: 1
 --- !u!1 &684953676 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4582019824381016673, guid: a01c7516e659bdf4b9897ab54df69b69,
@@ -8526,7 +8626,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f68ff84332eda48b82a23e9a693700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onTrigger: 0
 --- !u!54 &943737613
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9815,7 +9914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f68ff84332eda48b82a23e9a693700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onTrigger: 0
 --- !u!1 &1047924937
 GameObject:
   m_ObjectHideFlags: 0
@@ -60830,7 +60928,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f68ff84332eda48b82a23e9a693700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onTrigger: 0
 --- !u!1 &1942912842
 GameObject:
   m_ObjectHideFlags: 0
@@ -60958,7 +61055,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f68ff84332eda48b82a23e9a693700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onTrigger: 0
 --- !u!1 &1944167378
 GameObject:
   m_ObjectHideFlags: 0

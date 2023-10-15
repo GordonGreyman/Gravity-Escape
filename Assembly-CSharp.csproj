@@ -96,6 +96,7 @@
     <Compile Include="Assets\EvolveGames\RealisticFPSController\Scripts\Viewpoint.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\PlayerTrigger.cs" />
+    <Compile Include="Assets\Scripts\Instructions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

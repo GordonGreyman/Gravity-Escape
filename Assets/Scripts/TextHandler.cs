@@ -14,8 +14,13 @@ public class TextHandler : MonoBehaviour
     public TextType textType;
     private Color textColor;
     public bool textTriggered;
+    public GameObject instructions;
 
-
+    private void Start()
+    {
+        if(instructions!= null)
+            StartCoroutine(StartInstructions());
+    }
     void Update()
     {
         if (textTriggered)
@@ -105,6 +110,12 @@ public class TextHandler : MonoBehaviour
         textComponent.gameObject.SetActive(false);
     }
 
+    private IEnumerator StartInstructions()
+    {
+        yield return new WaitForSeconds(14);
+        instructions.SetActive(true);
+    }
 
-    
+
+
 }
