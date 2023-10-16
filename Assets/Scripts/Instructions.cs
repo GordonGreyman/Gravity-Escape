@@ -15,7 +15,6 @@ public class Instructions : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(texts.Count);
         stopIndex = texts.Count;
         currentText = GetComponent<Text>();
         Shoot.OnCall += DisplayText;
