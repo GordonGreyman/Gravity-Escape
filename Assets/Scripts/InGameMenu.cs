@@ -15,8 +15,13 @@ public class InGameMenu : MonoBehaviour
     public Dropdown qualityDropdown;
     public Toggle fullScreenToggle;
     public AudioSource[] audioSources;
+
     public GameObject[] textObjs;
     private List<GameObject> openTextObjs = new List<GameObject>();
+
+    public GameObject[] imageObjs;
+    private List<GameObject> openImageObjs = new List<GameObject>();
+
 
     private enum FadeState { Inactive, FadingIn, FadingOut }
     private FadeState fadeState = FadeState.Inactive;
@@ -56,10 +61,19 @@ public class InGameMenu : MonoBehaviour
                {
                     if (textObj.activeInHierarchy)
                     {
-                        textObj.SetActive(false);
                         openTextObjs.Add(textObj);
+                        textObj.SetActive(false);
                     }
                }
+
+                foreach (GameObject imageObj in imageObjs)
+                {
+                    if (imageObj.activeInHierarchy)
+                    {
+                        openImageObjs.Add(imageObj);
+                        imageObj.SetActive(false);
+                    }
+                }
                 StartCoroutine(FadeIn());
             }
 
@@ -85,6 +99,13 @@ public class InGameMenu : MonoBehaviour
                     textObj.SetActive(true);
                     
                 }
+
+                foreach (GameObject imageObj in openImageObjs)
+                {
+                    imageObj.SetActive(true);
+
+                }
+                openImageObjs.Clear();
                 openTextObjs.Clear();
 
                 StartCoroutine(FadeOut());
@@ -131,6 +152,13 @@ public class InGameMenu : MonoBehaviour
         {
             textObj.SetActive(true);
         }
+
+        foreach (GameObject imageObj in openImageObjs)
+        {
+            imageObj.SetActive(true);
+
+        }
+        openImageObjs.Clear();
         openTextObjs.Clear();
 
         StartCoroutine(FadeOut());

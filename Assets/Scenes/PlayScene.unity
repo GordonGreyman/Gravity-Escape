@@ -4586,6 +4586,10 @@ MonoBehaviour:
   - {fileID: 144250101}
   - {fileID: 1385689455}
   - {fileID: 680183601}
+  imageObjs:
+  - {fileID: 1442376542}
+  - {fileID: 902966578}
+  - {fileID: 1667021593}
   escapeMenu: {fileID: 1848163466}
   settingsMenu: {fileID: 1848828452}
 --- !u!114 &416134378
